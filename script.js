@@ -1,51 +1,32 @@
-// Hent "knappen" som skal aktivere noe
-const hamburgerIcon = document.querySelector('#hamburgerIcon');
-console.log(hamburgerIcon);
+const form = document.getElementById('toDoList');
+const input = document.getElementById('toDo');
+const list = document.getElementById('myToDo');
 
-hamburgerIcon.addEventListener('click', function () {
-  // Hente elementet som skal bli synlig
-  const navList = document.querySelector('#navList');
-  console.log(navList);
+console.log (form);
+console.log (input);
+console.log (list);
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-  navList.classList.remove('hidden');
-  navList.classList.add('navList');
+  const taskText = input.value.trim();
+  if (taskText === '') return;
+  console.log(taskText);
+
+  const li = document.createElement('li');
+  li.textContent = taskText;
+
+  li.addEventListener('click', () => {
+    li.classList.toggle('completed');
+  });
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'X';
+  deleteBtn.addEventListener('click', () => {
+    li.remove();
+  });
+
+  li.appendChild(deleteBtn);
+  list.appendChild(li);
+
+  input.value = '';
 });
-
-const sunIcon = document.querySelector('#sunIcon');
-console.log(sunIcon);
-
-sunIcon.addEventListener('click', function () {
-  const body = document.querySelector('body');
-
-  body.classList.remove('light');
-  body.classList.add('dark');
-});
-
-//let hour = 13;
-
-//if (hour <= 4){
-//else if (hour < 10) {
-//  console.log("God Morgen");
-//}
-//else if (hour <18){
-//  console.log("God ettermiddag");
-//}
-//else{
-//  console.log("God kveld");
-//}
-
-let matButikk = 'Kiwi';
-
-if (matButikk == 'Rema') {
-  console.log('Jeg vil ikke på Rema');
-} else if (matButikk == 'Coop') {
-  console.log('Jeg vil kanskje på coop');
-} else if (matButikk == 'Kiwi') {
-  console.log("Let's go!");
-}
-
-let person1 = "Monica";
-let person2 = "Erica";
-let person3 = "Rita";
-
-if(person3 || person2 )
