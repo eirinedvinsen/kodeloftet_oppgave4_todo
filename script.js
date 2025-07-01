@@ -15,9 +15,15 @@ form.addEventListener('submit', function (e) {
   const li = document.createElement('li');
   li.textContent = taskText;
 
-  li.addEventListener('click', () => {
-    li.classList.toggle('completed');
-  });
+ const completedBtn = document.createElement('button');
+ completedBtn.textContent = 'V';
+ completedBtn.addEventListener("click", () => {
+  li.classList.toggle('completed');
+ });
+
+  // li.addEventListener('click', () => {
+  //   li.classList.toggle('completed');
+  // });
 
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'X';
@@ -25,6 +31,7 @@ form.addEventListener('submit', function (e) {
     li.remove();
   });
 
+  li.appendChild(completedBtn);
   li.appendChild(deleteBtn);
   list.appendChild(li);
 

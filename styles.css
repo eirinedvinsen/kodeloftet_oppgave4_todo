@@ -1,30 +1,7 @@
-:root {
-  /* Farge variabler */
-  --primaryColor: #fcc388ff; /* Peach */
-  --secondaryColor: #ffc5c9ff; /* Tea rose red*/
-  --accentColor: #ffffd1ff; /* Cream */
-  --accentColorTwo: #fee5d0ff; /* Champagne pink*/
-  --accentColorThree: #fff6edff; /* Seashell */
-
-  /* Størrelse variabler */
-  --smallSpace: 8px;
-  --mediumSpace: 16px;
-  --largeSpace: 24px;
-  --fullScreen: 100vh;
-
-  /* Skrift variabler */
-  --fontFamily: "Roboto";
-  --fontSize: 18px;
-}
-
-/* GENERAL */
-* {
-  box-sizing: border-box;
-}
-
+/* GENERAL  */
 body {
   margin: 0;
-  font-family: var(--fontFamily);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .dark {
@@ -39,14 +16,6 @@ body {
   justify-content: space-between;
   padding: 0 16px;
   background-color: rgb(19, 11, 11);
-}
-
-/* Nav */
-.navList {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
 }
 
 /* MAIN */
@@ -73,6 +42,7 @@ h1 {
 
 .toDoStyling {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
@@ -92,7 +62,7 @@ input[type=text]{
   border-radius: 4px;
 }
 
-button {
+.addBtn {
   padding: 8px 12px;
   border: none;
   background-color: #a7289c;
@@ -127,8 +97,17 @@ li.completed {
   background-color: greenyellow;
 }
 
-li button {
+.removeItemBtn {
   background: #dc3545;
+  border: none;
+  color: rgb(7, 0, 0);
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkItemBtn {
+  background: greenyellow;
   border: none;
   color: rgb(7, 0, 0);
   padding: 5px 8px;

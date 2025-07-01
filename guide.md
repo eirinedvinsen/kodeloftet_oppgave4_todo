@@ -29,3 +29,5 @@
 - Balanse:
   - Symetri vs asymetri
   - Mengde tekst mot mengde bilder
+
+
